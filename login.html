@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login - Skill Journey</title>
+  <title>Login</title>
   <style>
-    body { font-family: Arial; background: #eef; padding: 20px; }
-    .container { max-width: 400px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h2 { text-align: center; }
-    input[type="text"], input[type="password"] {
-      width: 100%; padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc;
+    body { font-family: Arial, sans-serif; text-align: center; padding-top: 80px; background: #f2f2f2; }
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     button {
-      <p style="text-align:center; margin-top:10px;">
-  Don't have an account? <a href="signup.html">Sign up here</a>
-</p>
-      width: 100%; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 4px;
-      font-size: 16px;
+      padding: 10px 30px;
+      margin-top: 10px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
     }
-    button:hover { background: #45a049; }
+    a { display: block; margin-top: 20px; color: #2196F3; }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="login-box">
     <h2>Login</h2>
-    <form onsubmit="login(event)">
-      <input type="text" id="username" placeholder="Enter username" required>
-      <input type="password" id="password" placeholder="Enter password" required>
-      <button type="submit">Login</button>
-    </form>
+    <input type="text" placeholder="Username" id="username" />
+    <input type="password" placeholder="Password" id="password" />
+    <button onclick="login()">Login</button>
+    <a href="#" onclick="signup()">Sign Up</a>
   </div>
 
-<script>
-  function login(event) {
-    event.preventDefault();
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
-    const storedPassword = localStorage.getItem(username);
-
-    if (storedPassword && storedPassword === password) {
-      alert("Login successful! Redirecting...");
+  <script>
+    function login() {
+      // Simulate login (no actual check)
       window.location.href = "dashboard.html";
-    } else {
-      alert("Invalid credentials. Please try again or sign up.");
     }
-  }
-</script>
+
+    function signup() {
+      // Simulate sign-up
+      alert("Signup successful! You can now login.");
+    }
+  </script>
 </body>
 </html>
+
