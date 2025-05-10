@@ -1,47 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Skill Dashboard - Skill Journey</title>
+  <title>Dashboard</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
     h1 { text-align: center; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-    .card {
+    .skill-card {
       background: white;
       padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      border-left: 5px solid #2196F3;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-      cursor: pointer;
-      transition: 0.3s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
-    .card:hover {
-      transform: scale(1.03);
-      background-color: #e0f7fa;
+    a {
+      color: #2196F3;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>Choose a Skill to Learn</h1>
-  <div class="grid">
-    <div class="card" onclick="goToSkill('content-writing')">Content Writing</div>
-    <div class="card" onclick="goToSkill('video-editing')">Video Editing</div>
-    <div class="card" onclick="goToSkill('blogging')">Blogging</div>
-    <div class="card" onclick="goToSkill('web-development')">Web Development</div>
-    <div class="card" onclick="goToSkill('graphic-design')">Graphic Design</div>
+  <h1>Welcome to Your Skill Dashboard</h1>
+
+  <div class="skill-card">
+    <h2>Content Writing</h2>
+    <p>Start learning content writing from zero using our free step-by-step plan.</p>
+    <a href="content-writing.html">Go to Content Writing Skill</a>
   </div>
 
-  <script>
-    function goToSkill(skill) {
-      window.location.href = skill + ".html";
-    }
-  </script>
+  <!-- You can add more skill cards like this one -->
 </body>
 </html>
