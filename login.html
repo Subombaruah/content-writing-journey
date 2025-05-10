@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login - Skill Journey</title>
+  <style>
+    body { font-family: Arial; background: #eef; padding: 20px; }
+    .container { max-width: 400px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h2 { text-align: center; }
+    input[type="text"], input[type="password"] {
+      width: 100%; padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc;
+    }
+    button {
+      width: 100%; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 4px;
+      font-size: 16px;
+    }
+    button:hover { background: #45a049; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form onsubmit="login(event)">
+      <input type="text" id="username" placeholder="Enter username" required>
+      <input type="password" id="password" placeholder="Enter password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      // This is just a mock login - no real authentication
+      alert("Welcome, " + username + "! Redirecting to dashboard...");
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>
