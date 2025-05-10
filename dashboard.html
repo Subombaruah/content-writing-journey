@@ -1,48 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Welcome to SkillJourney</title>
+  <meta charset="UTF-8">
+  <title>Skill Dashboard</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1500&q=80');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+    header {
+      background-color: #00bcd4;
       color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
     }
     .container {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 12px;
-      text-align: center;
-      max-width: 600px;
-      width: 90%;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
-    h1 {
-      font-size: 32px;
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #00bcd4;
+    }
+    .card p {
+      font-size: 14px;
+      color: #555;
       margin-bottom: 20px;
     }
-    p {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
     .btn {
-      padding: 12px 30px;
-      background-color: #00bcd4;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      margin: 10px;
-      text-decoration: none;
       display: inline-block;
+      padding: 10px 20px;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
     }
     .btn:hover {
       background-color: #008fa1;
@@ -50,12 +63,35 @@
   </style>
 </head>
 <body>
+
+  <header>Welcome to Your Skill Dashboard</header>
+
   <div class="container">
-    <h1>Welcome to the Content Writing Journey</h1>
-    <p>This website will guide you to become a professional content writer from zero — 100% free! Step-by-step guidance, free tools, and practical tasks.</p>
-    <a class="btn" href="login.html">Login</a>
-    <a class="btn" href="dashboard.html">Continue without login</a>
+    <div class="card">
+      <h3>Content Writing</h3>
+      <p>Learn to write professionally with free resources, tools, and tips. Step-by-step from beginner to expert.</p>
+      <a href="content-writing.html" class="btn">Start Learning</a>
+    </div>
+
+    <div class="card">
+      <h3>SEO (Search Engine Optimization)</h3>
+      <p>Understand how search engines work and how to make content rank. Free, simple, and practical learning path.</p>
+      <a href="#" class="btn">Coming Soon</a>
+    </div>
+
+    <div class="card">
+      <h3>Video Editing</h3>
+      <p>Learn video editing with free tools and tutorials. Great for content creators, YouTubers, and marketers.</p>
+      <a href="#" class="btn">Coming Soon</a>
+    </div>
+
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Want to build websites like this one? Start from HTML basics to building full websites for free.</p>
+      <a href="#" class="btn">Coming Soon</a>
+    </div>
   </div>
+
 </body>
 </html>
-
+   
