@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard</title>
+  <title>Welcome to SkillJourney</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; }
-    h1 { text-align: center; }
-    .skill-card {
-      background: white;
-      padding: 20px;
-      margin: 20px auto;
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1500&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
       max-width: 600px;
-      border-left: 5px solid #2196F3;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      width: 90%;
     }
-    a {
-      color: #2196F3;
-      font-weight: bold;
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 12px 30px;
+      background-color: #00bcd4;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
       text-decoration: none;
+      display: inline-block;
     }
-    a:hover {
-      text-decoration: underline;
+    .btn:hover {
+      background-color: #008fa1;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Your Skill Dashboard</h1>
-
-  <div class="skill-card">
-    <h2>Content Writing</h2>
-    <p>Start learning content writing from zero using our free step-by-step plan.</p>
-    <a href="content-writing.html">Go to Content Writing Skill</a>
+  <div class="container">
+    <h1>Welcome to the Content Writing Journey</h1>
+    <p>This website will guide you to become a professional content writer from zero — 100% free! Step-by-step guidance, free tools, and practical tasks.</p>
+    <a class="btn" href="login.html">Login</a>
+    <a class="btn" href="dashboard.html">Continue without login</a>
   </div>
-
-  <!-- You can add more skill cards like this one -->
 </body>
 </html>
+
