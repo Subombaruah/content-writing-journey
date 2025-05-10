@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,43 +13,70 @@
       padding: 20px;
       background-color: #f8f9fa;
     }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
     }
+
     h1 {
       text-align: center;
       font-size: 2.5em;
       color: #2c3e50;
       margin-bottom: 30px;
     }
+
+    .search-bar {
+      width: 300px;
+      padding: 12px 20px;
+      border-radius: 30px;
+      border: 2px solid #00bcd4;
+      font-size: 1.1em;
+      margin: 20px auto;
+      display: block;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar:focus {
+      outline: none;
+      border-color: #008fa1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
       animation: fadeIn 1s ease-in-out;
     }
+
     .card {
       background: #ffffff;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     }
+
     .card h2 {
-      font-size: 1.25em;
-      margin-bottom: 10px;
+      font-size: 1.5em;
+      margin-bottom: 15px;
       color: #34495e;
     }
+
     .card p {
-      font-size: 0.95em;
+      font-size: 1.1em;
       color: #555;
-      line-height: 1.5;
+      line-height: 1.6;
       margin-bottom: 15px;
     }
+
     .progress-bar {
       width: 100%;
       background-color: #ddd;
@@ -56,73 +84,96 @@
       height: 10px;
       margin-top: 10px;
     }
+
     .progress {
       height: 100%;
       border-radius: 5px;
       background-color: #00bcd4;
     }
+
     .rating {
-      font-size: 0.9em;
+      font-size: 1em;
       color: #777;
     }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #00bcd4;
+      color: white;
+      border-radius: 30px;
+      font-size: 1.1em;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 20px;
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+    }
+
+    .btn:hover {
+      background-color: #008fa1;
+    }
+
     @keyframes fadeIn {
       0% { opacity: 0; }
       100% { opacity: 1; }
     }
+
   </style>
 </head>
 <body>
 
   <div class="container">
     <h1>My Skills Dashboard</h1>
-    <div class="grid">
 
-      <!-- Example Card: Content Writing -->
-     <section class="p-6">
-  <div class="max-w-3xl mx-auto">
     <!-- Search Bar -->
-    <input
-      type="text"
-      id="skillSearch"
-      placeholder="Search for a skill..."
-      class="w-full p-3 mb-6 border rounded-lg"
-      onkeyup="filterSkills()"
-    />
+    <input type="text" id="searchBar" placeholder="Search skills..." class="search-bar" onkeyup="searchSkills()">
 
-    <!-- Skill Cards that will be filtered based on the search -->
-    <div id="skillList" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="skill-card border p-4 rounded-lg shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-bold mb-2">Content Writing</h3>
-        <p>Learn how to write engaging articles, blogs, and copy that convert.</p>
+    <!-- Skills Grid -->
+    <div class="grid" id="skillsGrid">
+      <!-- Example Card: Content Writing -->
+      <div class="card">
+        <h2>Content Writing</h2>
+        <p>Learn how to write SEO-friendly, engaging, and well-structured content from scratch.</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 80%;"></div>
+        </div>
+        <div class="rating">Progress: 80%</div>
+        <a href="#" class="btn">Start Learning</a>
       </div>
 
-      <div class="skill-card border p-4 rounded-lg shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-bold mb-2">SEO</h3>
-        <p>Understand search engine optimization to rank your content higher.</p>
+      <!-- Example Card: SEO -->
+      <div class="card">
+        <h2>SEO (Search Engine Optimization)</h2>
+        <p>Understand how to optimize content for search engines and increase visibility.</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;"></div>
+        </div>
+        <div class="rating">Progress: 90%</div>
+        <a href="#" class="btn">Start Learning</a>
       </div>
 
-      <div class="skill-card border p-4 rounded-lg shadow hover:shadow-lg transition">
-        <h3 class="text-xl font-bold mb-2">Web Development</h3>
-        <p>Start building beautiful and functional websites with HTML, CSS, JS.</p>
-      </div>
-
-      <!-- Add more skills here -->
+      <!-- Add More Skills here following the same structure -->
     </div>
   </div>
-</section>
 
-    </div>
-  </div>
-<script>
-  function filterSkills() {
-    const input = document.getElementById("skillSearch").value.toLowerCase();
-    const cards = document.querySelectorAll(".skill-card");
+  <script>
+    function searchSkills() {
+      let filter = document.getElementById("searchBar").value.toUpperCase();
+      let grid = document.getElementById("skillsGrid");
+      let cards = grid.getElementsByClassName("card");
 
-    cards.forEach(card => {
-      const text = card.textContent.toLowerCase();
-      card.style.display = text.includes(input) ? "block" : "none";
-    });
-  }
-</script>
+      for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByTagName("h2")[0];
+        if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          cards[i].style.display = "";
+        } else {
+          cards[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
 </body>
 </html>
