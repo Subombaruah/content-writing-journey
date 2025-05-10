@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skill Dashboard - Skill Journey</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { text-align: center; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      background-color: #e0f7fa;
+    }
+  </style>
+</head>
+<body>
+  <h1>Choose a Skill to Learn</h1>
+  <div class="grid">
+    <div class="card" onclick="goToSkill('content-writing')">Content Writing</div>
+    <div class="card" onclick="goToSkill('video-editing')">Video Editing</div>
+    <div class="card" onclick="goToSkill('blogging')">Blogging</div>
+    <div class="card" onclick="goToSkill('web-development')">Web Development</div>
+    <div class="card" onclick="goToSkill('graphic-design')">Graphic Design</div>
+  </div>
+
+  <script>
+    function goToSkill(skill) {
+      window.location.href = skill + ".html";
+    }
+  </script>
+</body>
+</html>
