@@ -26,14 +26,21 @@
     </form>
   </div>
 
-  <script>
-    function login(event) {
-      event.preventDefault();
-      const username = document.getElementById('username').value;
-      // This is just a mock login - no real authentication
-      alert("Welcome, " + username + "! Redirecting to dashboard...");
+<script>
+  function login(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const storedPassword = localStorage.getItem(username);
+
+    if (storedPassword && storedPassword === password) {
+      alert("Login successful! Redirecting...");
       window.location.href = "dashboard.html";
+    } else {
+      alert("Invalid credentials. Please try again or sign up.");
     }
-  </script>
+  }
+</script>
 </body>
 </html>
